@@ -22,3 +22,14 @@
     transform: translateY(0);
   }
 }
+button{
+padding: 7px 15px;
+    font: inherit;
+    cursor: pointer;
+    background-color: #ff6d01;
+    color: white;
+    border-radius: 15px;
+    font-weight: bold;
+    border: none;
+    transition: .2s;
+}
