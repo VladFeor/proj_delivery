@@ -1,7 +1,6 @@
 import classes from "./AvailableMeals.module.css";
 import Card from "../UI/Card";
 import MealItem from "./MealItem/MealItem";
-import FirmItem from "./MealItem/FirmItem";
 import React, { useState } from "react";
 
 const DUMMY_MEALS = [
@@ -59,24 +58,6 @@ const DUMMY_MEALS = [
 let  mealsList ;
 const AvailableMeals = () => {
   const [isChoosed, setisChoosed] = useState(false);
-  //  mealsList = DUMMY_MEALS.map((meal) => (
-  //   <MealItem
-  //     id={meal.id}
-  //     key={meal.id}
-  //     name={meal.name}
-  //     description={meal.description}
-  //     price={meal.price}
-  //     firm = {meal.firm}
-  //     imgUrl = {meal.imgUrl}
-  //   />
-  // ));
-  // const firmList = DUMMY_MEALS.map((meal) => (
-  //   <FirmItem
-  //     id={meal.id}
-  //     key={meal.id}
-  //     firmName={meal.firmName}
-  //   />
-  // ));
 
    const handleClick = (firmName) => {
       const desiredFirm = DUMMY_MEALS.find((firm) => firm.firmName === firmName);
@@ -92,13 +73,8 @@ const AvailableMeals = () => {
           imgUrl = {meal.imgUrl}
         />
       ));
-      // mealsList = simplarray.map((meal) => (
-      //   console.log(meal)
-      // ));
         setisChoosed(true)
     };
-        
-    
   return (
     <section className={classes.meals}>
     {isChoosed
@@ -110,7 +86,7 @@ const AvailableMeals = () => {
         <div style={{display: "flex"}} >
           {DUMMY_MEALS.map((firm) => (
             <div   key={firm.id} onClick={() => handleClick(firm.firmName)}>
-              <img style={{border: '1px solid #14141427'}} src={firm.url}/>
+              <img style={{border: '1px solid #14141427'}} src={firm.url} alt="error"/>
              
             </div>
           ))}
